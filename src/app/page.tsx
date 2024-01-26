@@ -18,13 +18,15 @@ import ProfilePic from '../../public/images/avatar.jpg';
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 
 const socialBorder = `border group hover:border-secondaryDarker duration-200 rounded px-1.5 py-1 border-neutral-800 items-center flex`;
+const skillsHover = `border border-neutral-700 hover:border-secondaryDarker text-secondaryDarker hover:text-secondaryDark duration-200 bg-neutral-800 rounded flex items-center justify-between px-3 py-4`;
+
 export default function Home() {
   const items = allPosts;
   const colors = ["#503C3C", "#A87C7C", "#7E6363", "#795548"];
   return (
     <MaxWidthWrapper>
       <div className="flex flex-col space-y-6 md:space-y-10 pb-10">
-        <div className="flex flex-col space-y-6 md:space-y-10 md:px-6">
+        <div className="flex flex-col space-y-6 md:space-y-10 md:px-6 pb-5">
           <div className="flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0">
             <div className="flex flex-row items-center space-x-3">
               <Image
@@ -104,27 +106,32 @@ export default function Home() {
           </span>
         </div>
 
-        {/* Skills */} 
-        <div className={`my-8 px-6 text-secondaryDarker flex flex-row space-x-2 w-full h-12 overflow-x-auto ${inconsolata.className}`}>
-          <div className="border border-neutral-700 bg-neutral-800 rounded flex items-center justify-between px-3 py-4">
-            Python
-          </div>
-          <div className="border border-neutral-700 bg-neutral-800 rounded flex items-center justify-between px-3 py-4">
-            Applied ML
-          </div>
-          <div className="border border-neutral-700 bg-neutral-800 rounded flex items-center justify-between px-3 py-4">
-            SQL
-          </div>
-          <div className="border border-neutral-700 bg-neutral-800 rounded flex items-center justify-between px-3 py-4">
-            Data Storytelling
-          </div>
-        </div>
+
 
         <div className="flex flex-col space-y-0">
+          {/* Skills */}
+          <span className="font-semibold md:px-6">Top Skills</span>
+          <div className="flex flex-col space-y-4 pb-5">
+            <div className={`my-8 px-6 flex flex-row space-x-2 w-full h-12 overflow-x-auto ${inconsolata.className}`}>
+              <div className={`${skillsHover}`}>
+                Python
+              </div>
+              <div className={`${skillsHover}`}>
+                Applied ML
+              </div>
+              <div className={`${skillsHover}`}>
+                SQL
+              </div>
+              <div className={`${skillsHover}`}>
+                Data Storytelling
+              </div>
+            </div>
+          </div>
+
           {/* Projects */}
           <div className="flex flex-col space-y-4">
             <span className="font-semibold md:px-6">Featured Projects</span>
-            <div className="flex flex-col space-y-8 md:space-y-1 md:px-2">
+            <div className="flex flex-col space-y-8 md:space-y-1 md:px-2 pb-5">
               {CONFIG.projects.map((project, idx) => {
                 if (project.featured) {
                   return (
