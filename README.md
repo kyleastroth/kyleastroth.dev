@@ -7,18 +7,16 @@
 
 ## Changes to make:
 
-- Update bio
-- Add liscense
-- Add rough-notation animations
-- Synchronize animations
-- Fix spacing of skill/tool boxes
-- Update skill/tool boxes to change color on hover
+- ~~Update bio~~
+- ~~Add rough-notation animations~~
+- Fix spacing of skill boxes
+- Make skill boxes change color on hover
 - Add additional completed projects
-- Make arrows a cohesive set size
+- Make arrows identical sizes
 - Add paper pdfs to posts
 - Add map of favorite trail runs
 
-## Inspired by:
+## ❤️ Inspired by:
 
 - [leerob.io](https://github.com/leerob/leerob.io)
 - [hosnaqasmei.com](https://github.com/hqasmei/portfolio)
