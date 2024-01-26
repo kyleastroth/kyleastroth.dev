@@ -9,8 +9,8 @@
 
 - ~~Update bio~~
 - ~~Add rough-notation animations~~
-- Fix spacing of skill boxes
-- Make skill boxes change color on hover
+- ~~Fix spacing of skill boxes~~
+- ~~Make skill boxes change color on hover~~
 - Add additional completed projects
 - Make arrows identical sizes
 - Add paper pdfs to posts
