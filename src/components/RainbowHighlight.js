@@ -8,7 +8,6 @@ export const RainbowHighlight = ({ color, children }) => {
   return (
     <RoughNotation
       type="highlight"
-      padding={0}
       multiline={true}
       padding={[0, 2]}
       iterations={1}
