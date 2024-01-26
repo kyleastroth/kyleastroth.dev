@@ -8,16 +8,19 @@ import { CONFIG } from '@/config';
 import { reformatDate } from '@/lib/utils';
 import { allPosts } from 'contentlayer/generated';
 
-// import { annotate } from 
+import { annotate, annotationGroup } from 'rough-notation';
 import { Inconsolata } from 'next/font/google';
+import { RoughNotation, RoughNotationGroup } from 'react-rough-notation';
+import { RainbowHighlight } from '../components/RainbowHighlight';
 
 import ProfilePic from '../../public/images/avatar.jpg';
 
-const inconsolata = Inconsolata({ subsets: ['latin'] })
+const inconsolata = Inconsolata({ subsets: ['latin'] });
 
 const socialBorder = `border group hover:border-secondaryDarker duration-200 rounded px-1.5 py-1 border-neutral-800 items-center flex`;
 export default function Home() {
   const items = allPosts;
+  const colors = ["#503C3C", "#A87C7C", "#7E6363", "#795548"];
   return (
     <MaxWidthWrapper>
       <div className="flex flex-col space-y-6 md:space-y-10 pb-10">
@@ -78,11 +81,26 @@ export default function Home() {
 
           <span className="text-secondaryDark leading-6">
             <h1 className={`font-semibold text-xl py-4`}>
-              hey, I&#39;m kyle&nbsp;👋🏼
+              hey, I&#39;m 
+                kyle&nbsp;👋🏼
             </h1>
-            <p className='prose-invert'>
-              {`I'm a data fanatic, sometimes-web-developer, and (slow) trail runner. I'm passionate about leveraging data to tell compelling stories and uncover insights in unexpected places.`}
-            </p>
+            <RoughNotationGroup show={true}>
+              <p className='prose-invert'>
+                I&#39;m a&nbsp;
+                <RainbowHighlight color={colors[0]}>
+                  data enthusiast,
+                </RainbowHighlight>
+                &nbsp;sometimes-web-developer, and (slow)&nbsp;
+                <RainbowHighlight color={colors[2]}>
+                  trail runner
+                </RainbowHighlight>
+                . I&#39;m passionate about leveraging data to tell&nbsp;
+                <RainbowHighlight color={colors[3]}>
+                  compelling stories
+                </RainbowHighlight>
+                &nbsp;and uncover insights in unexpected places.
+              </p>
+            </RoughNotationGroup>
           </span>
         </div>
 
@@ -92,19 +110,13 @@ export default function Home() {
             Python
           </div>
           <div className="border border-neutral-700 bg-neutral-800 rounded flex items-center justify-between px-3 py-4">
-            SQL
-          </div>
-          <div className="border border-neutral-700 bg-neutral-800 rounded flex items-center justify-between px-3 py-4">
-            Java
-          </div>
-          <div className="border border-neutral-700 bg-neutral-800 rounded flex items-center justify-between px-3 py-4">
             Applied ML
           </div>
           <div className="border border-neutral-700 bg-neutral-800 rounded flex items-center justify-between px-3 py-4">
-            Data Storytelling
+            SQL
           </div>
           <div className="border border-neutral-700 bg-neutral-800 rounded flex items-center justify-between px-3 py-4">
-            Modeling
+            Data Storytelling
           </div>
         </div>
 

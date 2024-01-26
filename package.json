@@ -25,10 +25,12 @@
     "next-seo": "^6.4.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-rough-notation": "^1.0.5",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-pretty-code": "^0.12.5",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.0",
+    "rough-notation": "^0.5.1",
     "shikiji": "^0.9.0",
     "tailwind-merge": "^2.2.0",
     "unist-util-visit": "^5.0.0"
