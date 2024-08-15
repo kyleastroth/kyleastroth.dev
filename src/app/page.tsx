@@ -1,5 +1,3 @@
-import { Suspense } from 'react';
-
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,7 +6,6 @@ import { CONFIG } from '@/config';
 import { reformatDate } from '@/lib/utils';
 import { allPosts } from 'contentlayer/generated';
 
-import { annotate, annotationGroup } from 'rough-notation';
 import { Inconsolata } from 'next/font/google';
 import { RoughNotation, RoughNotationGroup } from 'react-rough-notation';
 import { RainbowHighlight } from '../components/RainbowHighlight';
@@ -23,6 +20,8 @@ const skillsHover = `border border-neutral-700 hover:border-secondaryDarker text
 export default function Home() {
   const items = allPosts;
   const colors = ["#503C3C", "#A87C7C", "#7E6363", "#795548"];
+  const colors2 = ["#839B68", '#D6CE93', '#689B9A']
+  const colors3 = ["#66535B", "#C78073", "#98686D", "#A9BB64", "#FDC969"]
   return (
     <MaxWidthWrapper>
       <div className="flex flex-col space-y-6 md:space-y-10 pb-10">
@@ -84,20 +83,20 @@ export default function Home() {
           <span className="text-secondaryDark leading-6">
             <h1 className={`font-semibold text-xl py-4`}>
               hey, I&#39;m 
-                kyle&nbsp;👋🏼
+                kyle&nbsp;<span className="wave">👋🏼</span>
             </h1>
             <RoughNotationGroup show={true}>
               <p className='prose-invert'>
                 I&#39;m a&nbsp;
-                <RainbowHighlight color={colors[0]}>
+                <RainbowHighlight color={colors3[0]}>
                   data enthusiast,
                 </RainbowHighlight>
                 &nbsp;sometimes-web-developer, and (slow)&nbsp;
-                <RainbowHighlight color={colors[2]}>
+                <RainbowHighlight color={colors3[1]}>
                   trail runner
                 </RainbowHighlight>
                 . I&#39;m passionate about leveraging data to tell&nbsp;
-                <RainbowHighlight color={colors[3]}>
+                <RainbowHighlight color={colors3[2]}>
                   compelling stories
                 </RainbowHighlight>
                 &nbsp;and uncover insights in unexpected places.
@@ -109,8 +108,13 @@ export default function Home() {
 
 
         <div className="flex flex-col space-y-0">
+        <RoughNotationGroup show={true}>
           {/* Skills */}
-          <span className="font-semibold md:px-6">Top Skills</span>
+          <span className="font-semibold md:px-6">
+            <RoughNotation type='circle' color={colors3[3]} strokeWidth={2} animationDelay={1500}>
+              Top Skills
+            </RoughNotation>
+          </span>
           <div className="flex flex-col space-y-4 pb-5">
             <div className={`my-8 px-6 flex flex-row space-x-2 w-full h-12 overflow-x-auto ${inconsolata.className}`}>
               <div className={`${skillsHover}`}>
@@ -130,7 +134,11 @@ export default function Home() {
 
           {/* Projects */}
           <div className="flex flex-col space-y-4">
-            <span className="font-semibold md:px-6">Featured Projects</span>
+            <span className="font-semibold md:px-6">
+            <RoughNotation type='underline' color={colors3[4]} strokeWidth={2} animationDelay={1700}>
+              Featured Projects
+            </RoughNotation>
+            </span>
             <div className="flex flex-col space-y-8 md:space-y-1 md:px-2 pb-5">
               {CONFIG.projects.map((project, idx) => {
                 if (project.featured) {
@@ -198,9 +206,13 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Posts */}
+          {/* Posts
           <div className="flex flex-col space-y-4">
-            <span className="font-semibold md:px-6">Posts</span>
+            <span className="font-semibold md:px-6">
+            <RoughNotation type='underline' color={colors2[2]} animationDelay={2000}>
+              Posts
+            </RoughNotation>
+            </span>
             <div className="flex flex-col space-y-8 md:space-y-1 md:px-2">
               {items
                 .filter((post) => post.featured) // Filtering to only include items where featured is true
@@ -259,7 +271,8 @@ export default function Home() {
                 />
               </svg>
             </Link>
-          </div>
+          </div> */}
+        </RoughNotationGroup>
         </div>
       </div>
     </MaxWidthWrapper>
