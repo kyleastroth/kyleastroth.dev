@@ -27,7 +27,7 @@ export const CONFIG = {
       slug: 'covid-transfer-learning',
       description: 'Application of Transfer Learning with Local Interpretable Model-Agnostic Explanations (LIME) to a novel X-Ray dataset for COVID-19 detection.',
       image: 'https://drive.google.com/uc?export=view&id=14DUQ3KkcgrS5AVw7I7OXL8srcFUxA1h-',
-      link: 'https://kyleastroth.github.io/transfer-learning/',
+      link: 'https://kyleastroth.github.io/covid-transfer-learning/',
     },
     {
       featured: true,
